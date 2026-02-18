@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el mejor padre del mundo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-box: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 85%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: italic;
+        }
+        .highlight {
+            display: block;
+            margin-top: 2rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #fdbb2d;
+        }
+        .stars {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>Feliz Cumpleaños, Papá</h1>
+        <div class="message">
+            <p>"A veces las palabras no alcanzan para explicar la gratitud de un hijo. Gracias por ser el roble que me sostiene y la luz que guía mis pasos cuando el camino se pone oscuro."</p>
+            <p style="margin-top: 15px;">"Tu fuerza ha sido mi ejemplo y tu nobleza mi mayor herencia. Hoy no solo celebro un año más de tu vida, sino la fortuna inmensa de llamarte mi padre."</p>
+        </div>
+        <span class="highlight">Te quiero con toda el alma.</span>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">— Tu hijo</p>
+    </div>
+</body>
+</html>
