@@ -1,82 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para el mejor padre del mundo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-box: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            color: white;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 3rem;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            max-width: 600px;
-            width: 85%;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-        .message {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            font-weight: 300;
-            font-style: italic;
-        }
-        .highlight {
-            display: block;
-            margin-top: 2rem;
-            font-weight: 600;
-            font-size: 1.3rem;
-            color: #fdbb2d;
-        }
-        .stars {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Papá</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+button {
+    padding: 15px 25px;
+    margin: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #1e3c72;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffd700;
+}
+
+#poema {
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.9;
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
 </head>
+
 <body>
-    <div class="stars"></div>
-    <div class="container">
-        <h1>Feliz Cumpleaños, Papá</h1>
-        <div class="message">
-            <p>"A veces las palabras no alcanzan para explicar la gratitud de un hijo. Gracias por ser el roble que me sostiene y la luz que guía mis pasos cuando el camino se pone oscuro."</p>
-            <p style="margin-top: 15px;">"Tu fuerza ha sido mi ejemplo y tu nobleza mi mayor herencia. Hoy no solo celebro un año más de tu vida, sino la fortuna inmensa de llamarte mi padre."</p>
-        </div>
-        <span class="highlight">Te quiero con toda el alma.</span>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">— Tu hijo</p>
-    </div>
+
+<h1>🎂 Feliz Cumpleaños, Papá 🎂</h1>
+
+<p>
+Hoy no es un día cualquiera. Hoy celebramos la vida del hombre que ha sido
+mi ejemplo, mi apoyo, mi guía y mi fuerza silenciosa.
+Celebramos tu paciencia infinita, tus consejos sabios, tus sacrificios que muchas veces no vi,
+pero que hoy entiendo con el corazón lleno de gratitud.
+</p>
+
+<p>
+Papá, desde que era pequeño/a, tu voz fue mi seguridad,
+tus brazos mi refugio y tu mirada mi dirección.
+Me enseñaste que la vida no siempre es fácil,
+pero que con esfuerzo, honestidad y amor se puede superar cualquier tormenta.
+</p>
+
+<p>
+Hoy quiero que esta página sea más que un simple regalo.
+Quiero que sea un pedacito de mi corazón,
+un recuerdo digital que puedas abrir cuando quieras
+y sentir cuánto te amo y cuánto significas para mí.
+</p>
+
+<p>
+Gracias por cada mañana de trabajo duro,
+por cada consejo aunque yo no quisiera escucharlo,
+por cada sacrificio silencioso,
+por cada abrazo que me dio fuerza cuando más lo necesitaba.
+</p>
+
+<p>
+Este día es tuyo.  
+Y aunque las palabras nunca serán suficientes,
+hoy intento con ellas devolverte un poco de todo lo que me has dado.
+</p>
+
+<button onclick="mostrarPoema(1)">📜 Poema: Mi Héroe</button>
+<button onclick="mostrarPoema(2)">💙 Poema: Gracias Papá</button>
+<button onclick="mostrarPoema(3)">🌟 Poema: Tu Legado</button>
+
+<div id="poema"></div>
+
+<script>
+function mostrarPoema(numero) {
+
+let texto = "";
+
+if(numero === 1){
+texto = `
+Papá, eres mi héroe sin capa,
+mi ejemplo diario,
+la fuerza que sostiene mis pasos
+cuando el mundo parece pesado.
+
+Tus manos llevan historias de esfuerzo,
+tus ojos guardan silencios de sacrificio,
+y tu corazón late con un amor
+que nunca pide nada a cambio.
+
+Desde pequeño/a aprendí
+que tu sombra era protección,
+que tu voz era consejo,
+y que tu abrazo era hogar.
+
+Hoy entiendo cada desvelo,
+cada preocupación callada,
+cada sueño que quizás pospusiste
+para que yo pudiera cumplir los míos.
+
+Si algún día dudo de mí,
+recuerdo tu mirada firme,
+esa que me enseñó
+que rendirse nunca fue opción.
+
+Eres mi orgullo,
+mi raíz y mi fortaleza.
+Feliz cumpleaños, papá,
+mi héroe eterno.
+`;
+}
+
+else if(numero === 2){
+texto = `
+Gracias, papá,
+por enseñarme a caminar sin miedo,
+por mostrarme que la honestidad
+vale más que cualquier tesoro.
+
+Gracias por tus palabras firmes,
+por tus consejos sinceros,
+por tu paciencia cuando fallé,
+y por tu fe cuando yo no creía en mí.
+
+Gracias por cada sacrificio invisible,
+por cada preocupación guardada,
+por cada momento en que pusiste mi felicidad
+por encima de la tuya.
+
+No siempre entendí tus silencios,
+ni la magnitud de tu esfuerzo,
+pero hoy miro atrás
+y veo todo el amor que sembraste.
+
+Si soy fuerte,
+es porque aprendí de ti.
+Si soy valiente,
+es porque crecí a tu lado.
+
+Feliz cumpleaños, papá.
+Gracias por ser mi guía,
+mi maestro
+y mi mayor bendición.
+`;
+}
+
+else if(numero === 3){
+texto = `
+Tu legado no está en cosas materiales,
+está en los valores que sembraste en mí.
+
+Está en la forma en que enfrento los problemas,
+en la manera en que trato a los demás,
+en la fuerza que encuentro
+cuando la vida me pone a prueba.
+
+Me enseñaste que el respeto se gana,
+que la familia es lo primero,
+y que el amor verdadero
+se demuestra con acciones.
+
+Cada paso que doy lleva tu enseñanza,
+cada logro mío también es tuyo,
+porque detrás de cada éxito
+está tu apoyo silencioso.
+
+Papá, que este nuevo año de vida
+te regale la alegría que mereces,
+la paz que has dado,
+y el amor que siempre sembraste.
+
+Feliz cumpleaños.
+Hoy celebramos tu vida,
+pero todos los días celebramos
+la fortuna de tenerte.
+`;
+}
+
+document.getElementById("poema").innerText = texto;
+}
+</script>
+
 </body>
 </html>
+
