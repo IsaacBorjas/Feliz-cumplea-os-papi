@@ -3,214 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Cumpleaños Papá</title>
+<title>Feliz Cumpleaños Papá 🎂</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-    color: white;
-    text-align: center;
-    padding: 20px;
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+    color:#333;
+    overflow-x:hidden;
 }
 
-h1 {
-    font-size: 2.8em;
-    margin-top: 30px;
+/* Contenedor principal */
+.container{
+    padding:40px 20px;
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-button {
-    padding: 15px 25px;
-    margin: 15px;
-    border: none;
-    border-radius: 30px;
-    background-color: #ffffff;
-    color: #1e3c72;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #ffd700;
-}
-
-#poema {
-    margin-top: 30px;
-    padding: 20px;
-    font-size: 18px;
-    line-height: 1.9;
+h1{
+    font-size:40px;
+    margin-bottom:10px;
     animation: aparecer 1.5s ease;
 }
 
-@keyframes aparecer {
-    from { opacity: 0; }
-    to { opacity: 1; }
+p{
+    font-size:18px;
+    max-width:600px;
+    margin:auto;
+}
+
+/* Botones */
+button{
+    margin-top:20px;
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* Mensaje oculto */
+#sorpresa{
+    display:none;
+    margin-top:20px;
+    font-size:22px;
+    animation: aparecer 1s ease;
+}
+
+/* Pastel */
+.cake{
+    margin-top:40px;
+    font-size:80px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cake:hover{
+    transform:scale(1.1);
+}
+
+/* Globos */
+.balloon{
+    position:fixed;
+    bottom:-100px;
+    font-size:40px;
+    animation: subir linear infinite;
+}
+
+@keyframes subir{
+    from{transform:translateY(0);}
+    to{transform:translateY(-120vh);}
+}
+
+/* Confeti */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:red;
+    top:-10px;
+    animation: caer 3s linear forwards;
+}
+
+@keyframes caer{
+    to{transform:translateY(100vh) rotate(720deg);}
+}
+
+/* Animación entrada */
+@keyframes aparecer{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎂 Feliz Cumpleaños, Papá 🎂</h1>
+<div class="container">
+    <h1>🎉 ¡Feliz Cumpleaños Papá! 🎉</h1>
+    <p>
+        Gracias por todo tu esfuerzo, tu cariño y por siempre estar para mí.
+        Hoy celebramos a la mejor persona del mundo.
+    </p>
 
-<p>
-Hoy no es un día cualquiera. Hoy celebramos la vida del hombre que ha sido
-mi ejemplo, mi apoyo, mi guía y mi fuerza silenciosa.
-Celebramos tu paciencia infinita, tus consejos sabios, tus sacrificios que muchas veces no vi,
-pero que hoy entiendo con el corazón lleno de gratitud.
-</p>
+    <div class="cake" onclick="apagarVelas()">🎂</div>
+    <p>(Haz clic en el pastel para soplar las velas)</p>
 
-<p>
-Papá, desde que era pequeño/a, tu voz fue mi seguridad,
-tus brazos mi refugio y tu mirada mi dirección.
-Me enseñaste que la vida no siempre es fácil,
-pero que con esfuerzo, honestidad y amor se puede superar cualquier tormenta.
-</p>
+    <button onclick="mostrarSorpresa()">Mensaje especial</button>
 
-<p>
-Hoy quiero que esta página sea más que un simple regalo.
-Quiero que sea un pedacito de mi corazón,
-un recuerdo digital que puedas abrir cuando quieras
-y sentir cuánto te amo y cuánto significas para mí.
-</p>
+    <div id="sorpresa">
+        ❤️ Papá, eres mi héroe.  
+        Te quiero mucho y espero que tengas un día increíble.
+    </div>
 
-<p>
-Gracias por cada mañana de trabajo duro,
-por cada consejo aunque yo no quisiera escucharlo,
-por cada sacrificio silencioso,
-por cada abrazo que me dio fuerza cuando más lo necesitaba.
-</p>
+    <button onclick="musica()">Reproducir música</button>
+</div>
 
-<p>
-Este día es tuyo.  
-Y aunque las palabras nunca serán suficientes,
-hoy intento con ellas devolverte un poco de todo lo que me has dado.
-</p>
-
-<button onclick="mostrarPoema(1)">📜 Poema: Mi Héroe</button>
-<button onclick="mostrarPoema(2)">💙 Poema: Gracias Papá</button>
-<button onclick="mostrarPoema(3)">🌟 Poema: Tu Legado</button>
-
-<div id="poema"></div>
+<audio id="audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 
 <script>
-function mostrarPoema(numero) {
-
-let texto = "";
-
-if(numero === 1){
-texto = `
-Papá, eres mi héroe sin capa,
-mi ejemplo diario,
-la fuerza que sostiene mis pasos
-cuando el mundo parece pesado.
-
-Tus manos llevan historias de esfuerzo,
-tus ojos guardan silencios de sacrificio,
-y tu corazón late con un amor
-que nunca pide nada a cambio.
-
-Desde pequeño/a aprendí
-que tu sombra era protección,
-que tu voz era consejo,
-y que tu abrazo era hogar.
-
-Hoy entiendo cada desvelo,
-cada preocupación callada,
-cada sueño que quizás pospusiste
-para que yo pudiera cumplir los míos.
-
-Si algún día dudo de mí,
-recuerdo tu mirada firme,
-esa que me enseñó
-que rendirse nunca fue opción.
-
-Eres mi orgullo,
-mi raíz y mi fortaleza.
-Feliz cumpleaños, papá,
-mi héroe eterno.
-`;
+// Mostrar mensaje sorpresa
+function mostrarSorpresa(){
+    document.getElementById("sorpresa").style.display="block";
+    lanzarConfeti();
 }
 
-else if(numero === 2){
-texto = `
-Gracias, papá,
-por enseñarme a caminar sin miedo,
-por mostrarme que la honestidad
-vale más que cualquier tesoro.
-
-Gracias por tus palabras firmes,
-por tus consejos sinceros,
-por tu paciencia cuando fallé,
-y por tu fe cuando yo no creía en mí.
-
-Gracias por cada sacrificio invisible,
-por cada preocupación guardada,
-por cada momento en que pusiste mi felicidad
-por encima de la tuya.
-
-No siempre entendí tus silencios,
-ni la magnitud de tu esfuerzo,
-pero hoy miro atrás
-y veo todo el amor que sembraste.
-
-Si soy fuerte,
-es porque aprendí de ti.
-Si soy valiente,
-es porque crecí a tu lado.
-
-Feliz cumpleaños, papá.
-Gracias por ser mi guía,
-mi maestro
-y mi mayor bendición.
-`;
+// Pastel (soplar velas)
+function apagarVelas(){
+    alert("¡Desea un deseo! 🎂");
+    lanzarConfeti();
 }
 
-else if(numero === 3){
-texto = `
-Tu legado no está en cosas materiales,
-está en los valores que sembraste en mí.
-
-Está en la forma en que enfrento los problemas,
-en la manera en que trato a los demás,
-en la fuerza que encuentro
-cuando la vida me pone a prueba.
-
-Me enseñaste que el respeto se gana,
-que la familia es lo primero,
-y que el amor verdadero
-se demuestra con acciones.
-
-Cada paso que doy lleva tu enseñanza,
-cada logro mío también es tuyo,
-porque detrás de cada éxito
-está tu apoyo silencioso.
-
-Papá, que este nuevo año de vida
-te regale la alegría que mereces,
-la paz que has dado,
-y el amor que siempre sembraste.
-
-Feliz cumpleaños.
-Hoy celebramos tu vida,
-pero todos los días celebramos
-la fortuna de tenerte.
-`;
+// Música
+function musica(){
+    document.getElementById("audio").play();
 }
 
-document.getElementById("poema").innerText = texto;
+// Globos automáticos
+function crearGlobo(){
+    const globo = document.createElement("div");
+    globo.className="balloon";
+    globo.innerText="🎈";
+    globo.style.left=Math.random()*100+"vw";
+    globo.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(globo);
+
+    setTimeout(()=>globo.remove(),8000);
 }
+setInterval(crearGlobo,800);
+
+// Confeti
+function lanzarConfeti(){
+    for(let i=0;i<80;i++){
+        const c=document.createElement("div");
+        c.className="confetti";
+        c.style.left=Math.random()*100+"vw";
+        c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+        c.style.animationDuration=(2+Math.random()*2)+"s";
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),4000);
+    }
+}
+
+// Confeti al abrir la página
+window.onload=lanzarConfeti;
 </script>
 
 </body>
 </html>
-
