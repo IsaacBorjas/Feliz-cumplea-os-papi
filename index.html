@@ -3,258 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Cumpleaños Papá</title>
+<title>Feliz Cumpleaños Papi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:white;
-    text-align:center;
-    overflow-x:hidden;
+:root {
+    --dark-blue-bg: #030a10;
+    --light-blue-neon: #00e6ff;
+    --gray-text: #8899aa;
+    --border-glow: rgba(0, 230, 255, 0.4);
+    --gradient-title: linear-gradient(45deg, #00e6ff, #00aaff);
 }
 
-.container{
-    padding:40px 20px;
-    max-width:700px;
-    margin:auto;
+body {
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--dark-blue-bg);
+    color: var(--gray-text);
+    line-height: 1.6;
 }
 
-h1{
-    font-size:42px;
-    margin-bottom:10px;
-    animation: fadeIn 1.5s ease;
+/* Glitch */
+.glitch-effect {
+    animation: glitch 2s linear infinite;
+}
+@keyframes glitch {
+    0% { text-shadow: 2px 0 var(--light-blue-neon), -2px 0 red; }
+    10% { text-shadow: none; }
+    100% { text-shadow: none; }
 }
 
-.sub{
-    font-size:18px;
-    opacity:0.9;
-    margin-bottom:30px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.card{
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    border-radius:15px;
-    padding:25px;
-    margin-top:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    animation: fadeIn 2s ease;
+/* Header */
+header {
+    background-color: #05141e;
+    border-bottom: 2px solid var(--light-blue-neon);
+    box-shadow: 0 0 15px var(--border-glow);
+    padding: 20px 0;
+    text-align: center;
 }
 
-button{
-    margin-top:20px;
-    padding:14px 24px;
-    font-size:18px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#4facfe;
-    color:white;
-    transition:0.2s;
+.logo-nav {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px var(--light-blue-neon);
 }
 
-button:hover{
-    transform:scale(1.05);
+/* Hero */
+.hero {
+    padding: 120px 0;
+    text-align: center;
+    border-bottom: 1px dashed rgba(0, 230, 255, 0.2);
 }
 
-/* Carta oculta */
-#carta{
-    display:none;
-    margin-top:20px;
-    text-align:left;
-    line-height:1.6;
-    font-size:17px;
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Animación */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+.hero p {
+    font-size: 1.1rem;
+    color: var(--light-blue-neon);
+    max-width: 800px;
+    margin: 25px auto 40px;
 }
 
-/* Partículas */
-.particula{
-    position:fixed;
-    width:6px;
-    height:6px;
-    background:white;
-    border-radius:50%;
-    opacity:0.7;
-    animation: subir linear forwards;
+.btn-action {
+    background-color: var(--light-blue-neon);
+    color: var(--dark-blue-bg);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px var(--border-glow);
 }
 
-@keyframes subir{
-    to{
-        transform:translateY(-100vh);
-        opacity:0;
-    }
+/* Sección módulos (misma distribución) */
+.modules-section {
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 80px;
+    align-items: center;
+}
+
+.module-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.module-item:nth-child(even) {
+    text-align: right;
+}
+
+.module-item::before {
+    content: '>>';
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    color: var(--light-blue-neon);
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+.module-item:nth-child(even)::before {
+    left: unset;
+    right: -40px;
+}
+
+.module-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.module-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--light-blue-neon);
+    box-shadow: 0 0 10px var(--border-glow);
+}
+.module-item:nth-child(even) .module-title::after {
+    left: unset;
+    right: 0;
+}
+
+.module-description {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    max-width: 500px;
+}
+.module-item:nth-child(even) .module-description {
+    margin-left: auto;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #556677;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px dashed rgba(0, 230, 255, 0.1);
 }
 </style>
 </head>
 
 <body>
 
-<div cl<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Cumpleaños Papá</title>
+<header>
+    <div class="logo-nav glitch-effect">SYSTEM_MESSAGE</div>
+</header>
 
-<style>
-html, body{
-    margin:0;
-    padding:0;
-    background:#000;
-    color:#00e5ff;
-    font-family: "Courier New", monospace;
-    text-align:center;
-    overflow-x:hidden;
-}
-
-/* Fondo sutil animado */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
-    animation: rotateBg 20s linear infinite;
-    pointer-events:none;
-}
-
-@keyframes rotateBg{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-.container{
-    padding:60px 20px;
-    max-width:700px;
-    margin:auto;
-}
-
-h1{
-    font-size:40px;
-    text-shadow:0 0 10px #00e5ff;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    opacity:0.8;
-    margin-bottom:40px;
-    font-size:18px;
-}
-
-.card{
-    border:1px solid rgba(0,229,255,0.3);
-    padding:25px;
-    border-radius:10px;
-    background:rgba(0,0,0,0.4);
-    box-shadow:0 0 20px rgba(0,229,255,0.15);
-}
-
-/* Botón */
-button{
-    margin-top:25px;
-    padding:14px 28px;
-    font-size:16px;
-    font-family:monospace;
-    background:#00e5ff;
-    color:#000;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-button:hover{
-    background:#00bcd4;
-    transform:scale(1.05);
-}
-
-/* Mensaje oculto */
-#mensaje{
-    margin-top:25px;
-    opacity:0;
-    transition:opacity 1s ease;
-    font-size:18px;
-    line-height:1.6;
-}
-
-/* Partículas */
-.particula{
-    position:fixed;
-    width:6px;
-    height:6px;
-    background:#00e5ff;
-    animation: caer linear forwards;
-}
-
-@keyframes caer{
-    to{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Feliz Cumpleaños, Papá</h1>
-    <div class="subtitle">
-        Hoy celebramos a un gran hombre.
+<section class="hero">
+    <div class="container">
+        <h1 class="glitch-effect">FELIZ CUMPLEAÑOS PAPI</h1>
+        <p>// Gracias por tu esfuerzo // Tu apoyo // Tu ejemplo // Tu amor //</p>
+        <a href="#modules" class="btn-action">VER MENSAJE</a>
     </div>
+</section>
 
-    <div class="card">
-        <p>
-            Gracias por tu esfuerzo, tu dedicación y por todo lo que haces cada día.
-            Tu ejemplo, tu trabajo y tu fortaleza han sido una guía importante en mi vida.
+<div class="container" id="modules">
+<section class="modules-section">
+
+    <div class="module-item">
+        <h2 class="module-title">AMOR_INCONDICIONAL</h2>
+        <p class="module-description">
+        Gracias por tu amor en cada momento, por preocuparte siempre por la familia y por demostrar con acciones lo que significa ser un gran padre. 
+        Tu presencia ha sido seguridad, apoyo y fuerza durante toda mi vida.
         </p>
-
-        <button onclick="mostrarMensaje()">Ver mensaje especial</button>
-
-        <div id="mensaje">
-            Papá,<br><br>
-            Gracias por enseñarme a seguir adelante, a no rendirme y a siempre dar lo mejor.
-            Todo lo que haces por la familia significa mucho.<br><br>
-            Te deseo salud, tranquilidad y muchos años más de vida.<br><br>
-            Con cariño,<br>
-            Tu hijo.
-        </div>
     </div>
 
-    <button onclick="agradecer()">Gracias por todo</button>
+    <div class="module-item">
+        <h2 class="module-title">GRATITUD_TOTAL</h2>
+        <p class="module-description">
+        Gracias por cada día de trabajo, por los sacrificios que hiciste en silencio y por todo el esfuerzo que realizas para que nunca falte nada. 
+        Todo lo que haces tiene un valor enorme y nunca pasa desapercibido.
+        </p>
+    </div>
+
+    <div class="module-item">
+        <h2 class="module-title">EJEMPLO_DE_VIDA</h2>
+        <p class="module-description">
+        Me enseñaste a ser fuerte, responsable y a seguir adelante sin rendirme. 
+        Tu disciplina, tu dedicación y tu forma de enfrentar la vida son una inspiración para mí.
+        </p>
+    </div>
+
+    <div class="module-item">
+        <h2 class="module-title">APOYO_SIEMPRE</h2>
+        <p class="module-description">
+        Gracias por estar en los momentos difíciles, por tus consejos, por creer en mí y por impulsarme a ser mejor cada día. 
+        Tenerte como papá es una bendición.
+        </p>
+    </div>
+
+</section>
 </div>
 
-<script>
-function mostrarMensaje(){
-    document.getElementById("mensaje").style.opacity="1";
-    lanzarParticulas(40);
-}
-
-function agradecer(){
-    alert("Siempre voy a estar agradecido por todo lo que haces. Te quiero mucho.");
-    lanzarParticulas(60);
-}
-
-function lanzarParticulas(cantidad){
-    for(let i=0;i<cantidad;i++){
-        const p=document.createElement("div");
-        p.className="particula";
-        p.style.left=Math.random()*100+"vw";
-        p.style.top="-10px";
-        p.style.animationDuration=(2+Math.random()*2)+"s";
-        document.body.appendChild(p);
-        setTimeout(()=>p.remove(),4000);
-    }
-}
-</script>
+<footer>
+<div class="container">
+<p>
+Papá,<br><br>
+Que la vida te devuelva todo lo que has dado con esfuerzo y amor.<br>
+Te deseo salud, tranquilidad y muchos años más.<br><br>
+Con cariño,<br>
+Tu hijo.
+</p>
+</div>
+</footer>
 
 </body>
 </html>
