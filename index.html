@@ -96,64 +96,159 @@ button:hover{
 
 <body>
 
+<div cl<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Papá</title>
+
+<style>
+html, body{
+    margin:0;
+    padding:0;
+    background:#000;
+    color:#00e5ff;
+    font-family: "Courier New", monospace;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Fondo sutil animado */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+    animation: rotateBg 20s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes rotateBg{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.container{
+    padding:60px 20px;
+    max-width:700px;
+    margin:auto;
+}
+
+h1{
+    font-size:40px;
+    text-shadow:0 0 10px #00e5ff;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    opacity:0.8;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.card{
+    border:1px solid rgba(0,229,255,0.3);
+    padding:25px;
+    border-radius:10px;
+    background:rgba(0,0,0,0.4);
+    box-shadow:0 0 20px rgba(0,229,255,0.15);
+}
+
+/* Botón */
+button{
+    margin-top:25px;
+    padding:14px 28px;
+    font-size:16px;
+    font-family:monospace;
+    background:#00e5ff;
+    color:#000;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#00bcd4;
+    transform:scale(1.05);
+}
+
+/* Mensaje oculto */
+#mensaje{
+    margin-top:25px;
+    opacity:0;
+    transition:opacity 1s ease;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* Partículas */
+.particula{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:#00e5ff;
+    animation: caer linear forwards;
+}
+
+@keyframes caer{
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
 <div class="container">
     <h1>Feliz Cumpleaños, Papá</h1>
-    <div class="sub">Hoy celebramos a un gran hombre.</div>
+    <div class="subtitle">
+        Hoy celebramos a un gran hombre.
+    </div>
 
     <div class="card">
         <p>
-            Gracias por tu esfuerzo, por tu paciencia y por todo lo que has hecho por nuestra familia.
-            Tu trabajo, tu dedicación y tu ejemplo han sido una guía en mi vida.
-        </p>
-        <p>
-            Hoy no solo celebramos tu cumpleaños, sino también la gran persona que eres.
+            Gracias por tu esfuerzo, tu dedicación y por todo lo que haces cada día.
+            Tu ejemplo, tu trabajo y tu fortaleza han sido una guía importante en mi vida.
         </p>
 
-        <button onclick="abrirCarta()">Leer mensaje especial</button>
+        <button onclick="mostrarMensaje()">Ver mensaje especial</button>
 
-        <div id="carta">
-            <p>
-            Papá,
-            </p>
-            <p>
-            Quiero que sepas que te admiro mucho.  
-            Gracias por enseñarme a ser fuerte, responsable y a nunca rendirme.
-            </p>
-            <p>
-            Todo lo que haces por nosotros no pasa desapercibido.
-            Eres un ejemplo de esfuerzo y de amor por la familia.
-            </p>
-            <p>
-            Espero que este nuevo año de vida esté lleno de salud, tranquilidad y momentos felices.
-            </p>
-            <p>
+        <div id="mensaje">
+            Papá,<br><br>
+            Gracias por enseñarme a seguir adelante, a no rendirme y a siempre dar lo mejor.
+            Todo lo que haces por la familia significa mucho.<br><br>
+            Te deseo salud, tranquilidad y muchos años más de vida.<br><br>
             Con cariño,<br>
             Tu hijo.
-            </p>
         </div>
     </div>
 
-    <button onclick="agradecer()">Gracias por todo, papá</button>
+    <button onclick="agradecer()">Gracias por todo</button>
 </div>
 
 <script>
-function abrirCarta(){
-    document.getElementById("carta").style.display="block";
+function mostrarMensaje(){
+    document.getElementById("mensaje").style.opacity="1";
     lanzarParticulas(40);
 }
 
 function agradecer(){
-    alert("Siempre voy a estar agradecido por todo lo que haces. ¡Te quiero mucho!");
+    alert("Siempre voy a estar agradecido por todo lo que haces. Te quiero mucho.");
     lanzarParticulas(60);
 }
 
-// Efecto de partículas
 function lanzarParticulas(cantidad){
     for(let i=0;i<cantidad;i++){
         const p=document.createElement("div");
         p.className="particula";
         p.style.left=Math.random()*100+"vw";
-        p.style.bottom="0";
+        p.style.top="-10px";
         p.style.animationDuration=(2+Math.random()*2)+"s";
         document.body.appendChild(p);
         setTimeout(()=>p.remove(),4000);
