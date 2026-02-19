@@ -2,238 +2,195 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Feliz Cumpleaños Papi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
 <style>
-:root {
-    --dark-blue-bg: #030a10;
-    --light-blue-neon: #00e6ff;
-    --gray-text: #8899aa;
-    --border-glow: rgba(0, 230, 255, 0.4);
-    --gradient-title: linear-gradient(45deg, #00e6ff, #00aaff);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: 'Share Tech Mono', monospace;
-    background-color: var(--dark-blue-bg);
-    color: var(--gray-text);
-    line-height: 1.6;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#020b12;
+    color:#00eaff;
+    text-align:center;
+    overflow-x:hidden;
 }
 
-/* Glitch */
-.glitch-effect {
-    animation: glitch 2s linear infinite;
-}
-@keyframes glitch {
-    0% { text-shadow: 2px 0 var(--light-blue-neon), -2px 0 red; }
-    10% { text-shadow: none; }
-    100% { text-shadow: none; }
+/* Contenedor principal */
+.container{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+    padding:20px 15px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Título principal */
+.title{
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-shadow:0 0 10px #00eaff;
+    word-wrap:break-word;
 }
 
-/* Header */
-header {
-    background-color: #05141e;
-    border-bottom: 2px solid var(--light-blue-neon);
-    box-shadow: 0 0 15px var(--border-glow);
-    padding: 20px 0;
-    text-align: center;
+/* Subtitulo */
+.subtitle{
+    font-size:14px;
+    opacity:0.8;
+    margin-bottom:25px;
 }
 
-.logo-nav {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    color: white;
-    text-shadow: 0 0 10px var(--light-blue-neon);
+/* Sección tipo RAMGER (4 bloques) */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:35px;
 }
 
-/* Hero */
-.hero {
-    padding: 120px 0;
-    text-align: center;
-    border-bottom: 1px dashed rgba(0, 230, 255, 0.2);
+.card{
+    border:1px solid rgba(0,234,255,0.3);
+    border-radius:10px;
+    padding:15px 10px;
+    background:rgba(0,0,0,0.3);
 }
 
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(3rem, 7vw, 5rem);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin: 0;
-    background: var(--gradient-title);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.card h3{
+    font-size:14px;
+    margin-bottom:8px;
+    color:#00eaff;
 }
 
-.hero p {
-    font-size: 1.1rem;
-    color: var(--light-blue-neon);
-    max-width: 800px;
-    margin: 25px auto 40px;
+.card p{
+    font-size:12px;
+    color:#a7f9ff;
+    line-height:1.4;
 }
 
-.btn-action {
-    background-color: var(--light-blue-neon);
-    color: var(--dark-blue-bg);
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 2px;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px var(--border-glow);
+/* Mensaje largo */
+.message{
+    border:1px solid rgba(0,234,255,0.3);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:25px;
+    background:rgba(0,0,0,0.3);
 }
 
-/* Sección módulos (misma distribución) */
-.modules-section {
-    padding: 80px 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px 80px;
-    align-items: center;
+.message h2{
+    font-size:18px;
+    margin-bottom:10px;
 }
 
-.module-item {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    position: relative;
+.message p{
+    font-size:13px;
+    line-height:1.6;
+    color:#cfffff;
 }
 
-.module-item:nth-child(even) {
-    text-align: right;
+/* Poemas */
+.poems{
+    border:1px solid rgba(0,234,255,0.3);
+    border-radius:12px;
+    padding:18px;
+    background:rgba(0,0,0,0.3);
 }
 
-.module-item::before {
-    content: '>>';
-    position: absolute;
-    left: -40px;
-    top: 10px;
-    color: var(--light-blue-neon);
-    font-size: 1.2rem;
-    opacity: 0.6;
-}
-.module-item:nth-child(even)::before {
-    left: unset;
-    right: -40px;
+.poems h2{
+    font-size:18px;
+    margin-bottom:10px;
 }
 
-.module-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    color: white;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 10px;
+.poems p{
+    font-size:13px;
+    line-height:1.7;
+    color:#cfffff;
+    margin-bottom:10px;
 }
 
-.module-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 80px;
-    height: 2px;
-    background: var(--light-blue-neon);
-    box-shadow: 0 0 10px var(--border-glow);
-}
-.module-item:nth-child(even) .module-title::after {
-    left: unset;
-    right: 0;
+/* Animación suave */
+@keyframes glow{
+    0%{text-shadow:0 0 5px #00eaff;}
+    50%{text-shadow:0 0 20px #00eaff;}
+    100%{text-shadow:0 0 5px #00eaff;}
 }
 
-.module-description {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    max-width: 500px;
-}
-.module-item:nth-child(even) .module-description {
-    margin-left: auto;
-}
-
-/* Footer */
-footer {
-    background: #000;
-    color: #556677;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    border-top: 1px dashed rgba(0, 230, 255, 0.1);
+.title{
+    animation:glow 3s infinite;
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo-nav glitch-effect">SYSTEM_MESSAGE</div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h1 class="glitch-effect">FELIZ CUMPLEAÑOS PAPI</h1>
-        <p>// Gracias por tu esfuerzo // Tu apoyo // Tu ejemplo // Tu amor //</p>
-        <a href="#modules" class="btn-action">VER MENSAJE</a>
-    </div>
-</section>
-
-<div class="container" id="modules">
-<section class="modules-section">
-
-    <div class="module-item">
-        <h2 class="module-title">AMOR_INCONDICIONAL</h2>
-        <p class="module-description">
-        Gracias por tu amor en cada momento, por preocuparte siempre por la familia y por demostrar con acciones lo que significa ser un gran padre. 
-        Tu presencia ha sido seguridad, apoyo y fuerza durante toda mi vida.
-        </p>
-    </div>
-
-    <div class="module-item">
-        <h2 class="module-title">GRATITUD_TOTAL</h2>
-        <p class="module-description">
-        Gracias por cada día de trabajo, por los sacrificios que hiciste en silencio y por todo el esfuerzo que realizas para que nunca falte nada. 
-        Todo lo que haces tiene un valor enorme y nunca pasa desapercibido.
-        </p>
-    </div>
-
-    <div class="module-item">
-        <h2 class="module-title">EJEMPLO_DE_VIDA</h2>
-        <p class="module-description">
-        Me enseñaste a ser fuerte, responsable y a seguir adelante sin rendirme. 
-        Tu disciplina, tu dedicación y tu forma de enfrentar la vida son una inspiración para mí.
-        </p>
-    </div>
-
-    <div class="module-item">
-        <h2 class="module-title">APOYO_SIEMPRE</h2>
-        <p class="module-description">
-        Gracias por estar en los momentos difíciles, por tus consejos, por creer en mí y por impulsarme a ser mejor cada día. 
-        Tenerte como papá es una bendición.
-        </p>
-    </div>
-
-</section>
-</div>
-
-<footer>
 <div class="container">
-<p>
-Papá,<br><br>
-Que la vida te devuelva todo lo que has dado con esfuerzo y amor.<br>
-Te deseo salud, tranquilidad y muchos años más.<br><br>
-Con cariño,<br>
-Tu hijo.
-</p>
+
+    <!-- Título -->
+    <div class="title">FELIZ CUMPLEAÑOS PAPI</div>
+    <div class="subtitle">Gracias por todo lo que haces por mí</div>
+
+    <!-- 4 puntos tipo RAMGER -->
+    <div class="grid">
+
+        <div class="card">
+            <h3>AMOR_INFINITO</h3>
+            <p>Gracias por tu cariño, tu paciencia y por estar siempre conmigo en cada momento.</p>
+        </div>
+
+        <div class="card">
+            <h3>APOYO_TOTAL</h3>
+            <p>Siempre me has apoyado en todo, incluso cuando las cosas han sido difíciles.</p>
+        </div>
+
+        <div class="card">
+            <h3>EJEMPLO_DE_VIDA</h3>
+            <p>Tu esfuerzo y dedicación me enseñan cada día a ser mejor persona.</p>
+        </div>
+
+        <div class="card">
+            <h3>FELIZ_CUMPLEAÑOS</h3>
+            <p>Hoy celebramos tu vida y todo lo bueno que traes a nuestra familia.</p>
+        </div>
+
+    </div>
+
+    <!-- Mensaje largo (antes playbook) -->
+    <div class="message">
+        <h2>Gracias por todo, papá</h2>
+        <p>
+        Gracias por cada sacrificio que hiciste por nuestra familia.  
+        Gracias por trabajar duro todos los días para que no nos falte nada.  
+        Gracias por tus consejos, por tu paciencia y por enseñarme el valor del esfuerzo.  
+        Aunque a veces no lo diga, valoro todo lo que haces por mí.  
+        Eres una persona fuerte, responsable y admirable.  
+        Hoy quiero que sepas que te quiero mucho y que estoy orgulloso de ser tu hijo.
+        </p>
+    </div>
+
+    <!-- Poemas -->
+    <div class="poems">
+        <h2>Para ti</h2>
+
+        <p>
+        Padre, tu esfuerzo es mi inspiración,<br>
+        tu ejemplo, mi dirección,<br>
+        tu apoyo, mi fortaleza,<br>
+        y tu cariño, mi mayor protección.
+        </p>
+
+        <p>
+        No hay regalo que iguale tu valor,<br>
+        ni palabras que expresen tanto amor,<br>
+        hoy solo quiero decirte con el corazón:<br>
+        ¡Feliz cumpleaños, papá!
+        </p>
+    </div>
+
 </div>
-</footer>
 
 </body>
 </html>
